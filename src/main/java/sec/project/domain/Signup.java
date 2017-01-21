@@ -1,4 +1,4 @@
-package sec.project.domain;
+    package sec.project.domain;
 
 import javax.persistence.Entity;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -8,15 +8,17 @@ public class Signup extends AbstractPersistable<Long> {
 
     private String name;
     private String address;
+    private String email;
 
     public Signup() {
         super();
     }
 
-    public Signup(String name, String address) {
+    public Signup(String name, String address, final String email) {
         this();
         this.name = name;
         this.address = address;
+        this.email = email;
     }
 
     public String getName() {
@@ -35,4 +37,13 @@ public class Signup extends AbstractPersistable<Long> {
         this.address = address;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
 }

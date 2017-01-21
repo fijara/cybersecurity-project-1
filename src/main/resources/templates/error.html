@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${error_title}"></title>
+    </head>
+    <body>
+
+        <h1> <span th:text="${error_heading}"></span></h1>
+
+        <div th:text="${error_description}"></div>
+        
+        <a th:href="${error_continue}">Click to continue</a>
+ 
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+
+        <h1>Sign up to the event using this form</h1>
+
+        <form action="#" th:action="@{/register}" method="POST">
+            <p><label for="name">Name</label>: <input type="text" name="name" id="name" th:value="${name}"/></p>
+            <p><label for="name">Email</label>: <input type="text" name="email" id="email" th:value="${email}"/></p>
+            <p><label for="address">Address</label>: <input type="text" name="address" id="address" th:value="${address}"/></p>
+            <p><label for="termsandcond">Accept terms and conditions</label>: <input type="checkbox" name="termsandcond" id="termsandcond" value="accepted"/></p>
+            <input type="hidden" name="returnToUrl" id="returnToUrl" th:value="${returnToUrl}"/>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+        <div th:if="${error != null}">
+            <span th:text="${error}"></span>
+        </div>
+        <p></p>
+    </body>
+</html>

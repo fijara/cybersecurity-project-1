@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registrations</title>
+    </head>
+    <body>
+
+        <h1>Registrations</h1>
+
+          <ul>
+            <li th:each="registration : ${registrations}">
+                <span th:text="${registration.id}"></span>
+                <span th:text="${registration.name}"></span>
+                <span th:text="${registration.address}"></span>
+                <a th:href="@{/update/(id=${registration.id})}">Update</a>
+                <a th:href="@{/cancel/(id=${registration.id})}">Cancel</a>
+            </li>
+        </ul>
+        <a href="/">Main menu</a>
+    </body>
+</html>

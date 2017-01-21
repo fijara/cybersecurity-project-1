@@ -4,8 +4,19 @@
         <title>Thank you!</title>
     </head>
     <body>
-
+        <script type="text/javascript" th:inline="javascript">
+            /*<![CDATA[*/
+            var originalService = [[${returnToUrl}]];
+            setTimeout(function() {
+                window.location.href = originalService;
+            }, 5000); 
+            
+            /*]]>*/
+        </script>
+        
         <h1>Thank you! You have been signed up to the event!</h1>
 
+        <a th:href="${returnToUrl}">Back</a>
+        
     </body>
 </html>

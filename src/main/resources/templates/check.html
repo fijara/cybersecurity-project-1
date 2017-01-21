@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Check registration</title>
+    </head>
+    <body>
+
+        <h1>Check your registration</h1>
+
+        <form action="#" th:action="@{/check}" method="POST">
+            <p><label for="name">Email</label>: <input type="text" name="email" id="email"/></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+        
+        <a href="/">Main menu</a>
+    </body>
+</html>

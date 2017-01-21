@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cancel registration</title>
+    </head>
+    <body>
+
+        <h1>Cancel this registration?</h1>
+        <div th:if="${name != null}">
+            <span th:text="${email}"></span>
+            <span th:text="${name}"></span>
+            <span th:text="${address}"></span>
+        </div>
+        
+        <div th:if="${name == null}">
+            No registrations found by id <span th:text="${id}"></span>
+        </div>
+        <a th:href="@{/canceled(id=${id},confirm='true')}">Confirm</a><a href="/">Main menu</a>
+    </body>
+</html>
