@@ -42,7 +42,7 @@ public class SignupController {
     }
     
     @RequestMapping(value = "/update", method = RequestMethod.GET)
-    public String updateForm(Model model, @RequestParam String returnToUrl, @RequestParam String id) {
+    public String updateForm(Model model, @RequestParam String id) {
         Signup signup = signupRepository.findOne(Long.valueOf(id));
         if (signup != null) {
             model.addAttribute("id", id);
@@ -51,7 +51,7 @@ public class SignupController {
             model.addAttribute("email", signup.getEmail());
         }
         //
-        model.addAttribute("returnToUrl", returnToUrl);
+        model.addAttribute("returnToUrl", "/");
         model.addAttribute("form_action", "Update");
         //
         return "registration";
